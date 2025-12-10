@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::resource('users',UserController::class)->names('users');
-/*Route::resource('roles', RoleController::class)->names('roles');*/
+Route::resource('roles', RoleController::class)->names('roles');
 
 require __DIR__.'/settings.php';
